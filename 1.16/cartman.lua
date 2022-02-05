@@ -17,7 +17,7 @@ for _, x in ipairs(inventories) do
         table.insert(unloaders, x)
     elseif peripheral.hasType(x, "moreminecarts:minecart_loader_te") then
         table.insert(loaders, x)
-    else
+    elseif not peripheral.hasType(x, "create:belt") then
         table.insert(otherInventories, x)
     end
 end
