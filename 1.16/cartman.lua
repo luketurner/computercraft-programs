@@ -36,10 +36,10 @@ function pushBalanced(srcInv, destInvs)
         local itemCount = item.count
         local numInvs = #destInvs
         for _, inv in ipairs(destInvs) do
-            local invName = peripheral.getName(inv)
+            local destName = peripheral.getName(inv)
             local itemsPerInv = math.floor((itemCount - 1) / numInvs)
-            local itemsMoved = unloader.pushItems(invName, slot, itemsPerInv)
-            print(("\nmoved %d %s to %s"):format(itemsMoved, item.name, invName))
+            local itemsMoved = srcInv.pushItems(destName, slot, itemsPerInv)
+            print(("\nmoved %d %s to %s"):format(itemsMoved, item.name, destName))
             itemCount = itemCount - itemsMoved
             numInvs = numInvs - 1
         end
