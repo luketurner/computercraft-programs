@@ -31,6 +31,7 @@ for _, x in ipairs(unloaders) do print("  ", peripheral.getName(x)) end
 print("Inventories:")
 for _, x in ipairs(otherInventories) do print("  ", peripheral.getName(x)) end
 
+-- TODO, this balancing algorithm doesn't work very well when things get full
 function pushBalanced(srcInv, destInvs)
     for slot, item in pairs(srcInv.list()) do
         local itemCount = item.count
