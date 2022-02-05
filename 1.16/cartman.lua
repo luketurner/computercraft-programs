@@ -1,9 +1,19 @@
--- Minecart loader/unloader manager program
--- Copyright 2022 Luke Turner. Released under the MIT License.
--- Tested with Create Above and Beyond modpack, your mileage may vary!
+--[[
+    Cart Manager aka cartman
+    Copyright 2022 Luke Turner. Released under the MIT License.
+    Tested with Create Above and Beyond modpack, your mileage may vary!
+
+    Program to extract from Minecart Unloaders and insert into any other inventory touching
+    the computer -- or, extracting from said inventory and inserting into Minecart Loaders.
+    Unloaders/Loaders are from the More Minecarts mod. Because they have the option
+    to "leave one item in slot," you can transfer up to 27 stacks of different items
+    in a single minecart without risk of one item backstuffing and messing up the other
+    items. This program provides similar functionality when extracting from Unloaders -- it
+    leaves an item in every slot for filtering purposes.
+--]]
 
 print("")
-print("= CARTMAN =")
+print("= CART MANAGER =")
 print("")
 
 local inventories = { peripheral.find("inventory") }
